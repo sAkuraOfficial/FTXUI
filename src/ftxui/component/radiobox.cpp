@@ -50,7 +50,10 @@ class RadioboxBase : public ComponentBase, public RadioboxOption {
 
       elements.push_back(element | focus_management | reflect(boxes_[i]));
     }
-    return vbox(std::move(elements)) | reflect(box_);
+    if (horizontal)
+      return hbox(std::move(elements)) | reflect(box_);
+    else
+      return vbox(std::move(elements)) | reflect(box_);
   }
 
   // NOLINTNEXTLINE(readability-function-cognitive-complexity)

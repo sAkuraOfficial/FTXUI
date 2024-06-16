@@ -199,6 +199,7 @@ struct RadioboxOption {
 
   // Style:
   std::function<Element(const EntryState&)> transform;
+  bool horizontal = false;
 
   // Observers:
   /// Called when the selected entry changes.
